@@ -162,7 +162,9 @@ class SdDelegate extends Ui.BehaviorDelegate {
 
 class QuitDelegate extends Ui.ConfirmationDelegate
 {
-  const QUIT_TIMEOUT = 10 * 1000;  // Milliseconds
+  // Ben_Mode!
+  const QUIT_TIMEOUT = 250;  // Milliseconds
+  //const QUIT_TIMEOUT = 10 * 1000;  // Milliseconds
   var mTimer;
   var mResponseReceived;
 

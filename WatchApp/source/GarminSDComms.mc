@@ -102,6 +102,8 @@ class GarminSDComms {
 	System.println("onSdStatusReceive() Status ="+data.get("alarmPhrase"));
       }
       mAccelHandler.mStatusStr = data.get("alarmPhrase");
+      /*
+	// Benjamin mode means no watch notifications
       if (data.get("alarmState") != 0) {
 	try {
 	  if (Attention has :backlight) {
@@ -127,6 +129,7 @@ class GarminSDComms {
 	  Attention.vibrate(vibeData);
 	}
       }
+      */
     } else {
       mAccelHandler.mStatusStr = Rez.Strings.Error_abbrev + ": " + responseCode.toString();
       if (responseCode != lastOnSdStatusReceiveResponse) {
@@ -161,6 +164,8 @@ class GarminSDComms {
       if (Attention has :playTone) {
 	Attention.playTone(Attention.TONE_LOUD_BEEP);
       }
+      /*
+	// Ben Mode = no watch notifications
       if (Attention has :vibrate) {
 	 var vibeData =
 	  [
@@ -172,6 +177,7 @@ class GarminSDComms {
 	   ];
 	 Attention.vibrate(vibeData);
       }
+      */
 
 
       if (responseCode != lastOnReceiveResponse) {
